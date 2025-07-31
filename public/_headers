@@ -6,9 +6,28 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/*.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ts
+  Content-Type: application/javascript; charset=utf-8
+
+/*.tsx
+  Content-Type: application/javascript; charset=utf-8
+
+/*.svg
+  Content-Type: image/svg+xml; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+
 /manifest.webmanifest
-  Content-Type: application/manifest+json
+  Content-Type: application/manifest+json; charset=utf-8
   Cache-Control: public, max-age=86400
 
 /sw.js
+  Content-Type: application/javascript; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate

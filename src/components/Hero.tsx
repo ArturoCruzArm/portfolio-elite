@@ -226,7 +226,7 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="mailto:foro7.producciones@hoytmail.com"
+                href="mailto:foro7.producciones@hotmail.com"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 glass-effect rounded-full hover:bg-red-500 hover:text-white transition-all duration-300"

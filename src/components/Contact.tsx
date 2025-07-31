@@ -9,7 +9,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email Principal',
-      value: 'foro7.producciones@hoytmail.com',
+      value: 'foro7.producciones@hotmail.com',
       type: 'email'
     },
     {
@@ -240,7 +240,7 @@ const Contact = () => {
                 Reels y muestras creativas disponibles bajo solicitud
               </p>
               <motion.a
-                href="mailto:foro7.producciones@hoytmail.com"
+                href="mailto:foro7.producciones@hotmail.com"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-purple-500 text-white font-semibold rounded-full shadow-lg neon-glow hover:shadow-xl transition-all duration-300"

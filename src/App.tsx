@@ -5,6 +5,7 @@ import ErrorBoundary from './components/ErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import CustomCursor from './components/Cursor'
 import ThemeCustomizer from './components/ThemeCustomizer'
+import PresentationMode from './components/PresentationMode'
 
 // Lazy loading para componentes pesados
 const Hero = lazy(() => import('./components/Hero'))
@@ -22,6 +23,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('hero')
   const [isLoading, setIsLoading] = useState(true)
   const [currentTheme, setCurrentTheme] = useState('Elite Blue')
+  const [presentationMode, setPresentationMode] = useState(false)
 
   const navigation = [
     { name: 'Inicio', href: '#hero' },
@@ -168,6 +170,16 @@ function App() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={() => setPresentationMode(true)}
+                  className="hidden md:flex p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors items-center gap-2 text-sm"
+                >
+                  <i className="fas fa-presentation"></i>
+                  Presentación
+                </motion.button>
+                
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={toggleDarkMode}
                   className="p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
                 >
@@ -272,6 +284,12 @@ function App() {
         <ThemeCustomizer 
           currentTheme={currentTheme}
           onThemeChange={setCurrentTheme}
+        />
+
+        {/* Presentation Mode */}
+        <PresentationMode
+          isOpen={presentationMode}
+          onClose={() => setPresentationMode(false)}
         />
       </div>
     </div>

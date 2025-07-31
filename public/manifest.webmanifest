@@ -12,33 +12,33 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/portfolio-elite/icon-192x192.png",
+      "src": "./icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/portfolio-elite/icon-512x512.png",
+      "src": "./icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/portfolio-elite/apple-touch-icon.png",
+      "src": "./apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "/portfolio-elite/screenshot-desktop.png",
+      "src": "./screenshot-desktop.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Vista de escritorio del portafolio elite"
     },
     {
-      "src": "/portfolio-elite/screenshot-mobile.png",
+      "src": "./screenshot-mobile.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
@@ -53,7 +53,7 @@
       "url": "/portfolio-elite/#contact",
       "icons": [
         {
-          "src": "/portfolio-elite/icon-192x192.png",
+          "src": "./icon-192x192.png",
           "sizes": "192x192"
         }
       ]
@@ -65,7 +65,7 @@
       "url": "/portfolio-elite/#experience",
       "icons": [
         {
-          "src": "/portfolio-elite/icon-192x192.png",
+          "src": "./icon-192x192.png",
           "sizes": "192x192"
         }
       ]

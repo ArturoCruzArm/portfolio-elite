@@ -276,7 +276,7 @@ const PresentationMode = ({ isOpen, onClose }: PresentationModeProps) => {
 
   const downloadPDF = () => {
     // In a real implementation, you would generate a PDF
-    console.log('Downloading PDF presentation...')
+    // Downloading PDF presentation
   }
 
   if (!isOpen) return null

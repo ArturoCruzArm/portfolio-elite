@@ -4,7 +4,7 @@ const BASE_URL = '/portfolio-elite'
 const urlsToCache = [
   `${BASE_URL}/`,
   `${BASE_URL}/index.html`,
-  `${BASE_URL}/manifest.json`,
+  `${BASE_URL}/manifest.webmanifest`,
   // Assets will be cached automatically by Vite's build
 ]
 
@@ -13,11 +13,11 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('📦 Service Worker: Caching files')
+        // Service Worker: Caching files
         return cache.addAll(urlsToCache)
       })
       .then(() => {
-        console.log('✅ Service Worker: All files cached')
+        // Service Worker: All files cached
         return self.skipWaiting()
       })
   )
@@ -30,13 +30,13 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            console.log('🗑️ Service Worker: Deleting old cache:', cacheName)
+            // Service Worker: Deleting old cache
             return caches.delete(cacheName)
           }
         })
       )
     }).then(() => {
-      console.log('✅ Service Worker: Activated')
+      // Service Worker: Activated
       return self.clients.claim()
     })
   )
@@ -54,11 +54,11 @@ self.addEventListener('fetch', (event) => {
       .then((response) => {
         // Return cached version or fetch from network
         if (response) {
-          console.log('📋 Service Worker: Serving from cache:', event.request.url)
+          // Service Worker: Serving from cache
           return response
         }
 
-        console.log('🌐 Service Worker: Fetching from network:', event.request.url)
+        // Service Worker: Fetching from network
         return fetch(event.request).then((response) => {
           // Don't cache non-successful responses
           if (!response || response.status !== 200 || response.type !== 'basic') {

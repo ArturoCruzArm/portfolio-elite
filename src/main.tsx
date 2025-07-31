@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/portfolio-elite/sw.js')
       .then((registration) => {
-        console.log('✅ PWA: Service Worker registered successfully:', registration.scope)
+        // PWA: Service Worker registered successfully
         
         // Check for updates
         registration.addEventListener('updatefound', () => {
@@ -26,8 +26,8 @@ if ('serviceWorker' in navigator) {
           }
         })
       })
-      .catch((error) => {
-        console.log('❌ PWA: Service Worker registration failed:', error)
+      .catch(() => {
+        // PWA: Service Worker registration failed
       })
   })
 }
@@ -99,7 +99,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
       deferredPrompt.prompt()
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('✅ User accepted PWA install')
+          // User accepted PWA install
         }
         deferredPrompt = null
         installBanner.remove()

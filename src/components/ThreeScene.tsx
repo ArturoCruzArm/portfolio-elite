@@ -2,13 +2,17 @@ import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import * as THREE from 'three'
+
+// Performance optimizations
+const STAR_COUNT = 2000 // Reducido de 5000
+const CUBE_COUNT = 25   // Reducido de 50
 // import * as random from 'maath/random/dist/maath-random.esm'
 
 interface StarsProps {
   count?: number
 }
 
-function Stars({ count = 5000 }: StarsProps) {
+function Stars({ count = STAR_COUNT }: StarsProps) {
   const ref = useRef<THREE.Points>(null)
   
   const [sphere] = useMemo(() => {
@@ -51,7 +55,7 @@ interface FloatingCubesProps {
   count?: number
 }
 
-function FloatingCubes({ count = 50 }: FloatingCubesProps) {
+function FloatingCubes({ count = CUBE_COUNT }: FloatingCubesProps) {
   const meshRef = useRef<THREE.InstancedMesh>(null)
   
   const cubes = useMemo(() => {
@@ -108,8 +112,16 @@ const ThreeScene: React.FC = () => {
     <div style={{ width: '100%', height: '100%' }}>
       <Canvas
         camera={{ position: [0, 0, 1] }}
-        gl={{ alpha: true, antialias: true }}
-        dpr={[1, 2]}
+        gl={{ 
+          alpha: true, 
+          antialias: false,
+          powerPreference: "high-performance",
+          stencil: false,
+          depth: false
+        }}
+        dpr={[1, 1.5]} // Limit pixel ratio for performance
+        performance={{ min: 0.5 }} // Auto-adjust performance
+        frameloop="demand" // Only render when needed
         style={{ background: 'transparent' }}
         onCreated={({ gl }) => {
           gl.setClearColor(0x000000, 0)

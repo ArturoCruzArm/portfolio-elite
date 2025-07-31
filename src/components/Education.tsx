@@ -5,7 +5,8 @@ const Education = () => {
   const education = [
     {
       institution: 'Universidad Virtual del Estado de Guanajuato (UVEG)',
-      degree: 'Licenciatura en Tecnologías de la Información',
+      degree: 'Licenciatura en Sistemas Computacionales',
+      specialty: 'Especialidad en Big Data y Análisis de Datos',
       status: 'En curso',
       completion: 'Octubre 2025',
       icon: '🎓',
@@ -13,9 +14,10 @@ const Education = () => {
     },
     {
       institution: 'Instituto Tecnológico de León (ITL)',
-      degree: 'Estudios hasta 11vo semestre',
-      status: 'Interrumpidos por pandemia',
-      completion: '2020',
+      degree: 'Ingeniería en Sistemas Computacionales',
+      specialty: 'Carrera completa',
+      status: 'Completado',
+      completion: '2016 - 2021',
       icon: '🏢',
       color: 'from-purple-500 to-pink-500'
     }
@@ -69,9 +71,15 @@ const Education = () => {
                   {edu.institution}
                 </h3>
                 
-                <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-4">
+                <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">
                   {edu.degree}
                 </h4>
+                
+                {edu.specialty && (
+                  <p className="text-sm text-primary-600 dark:text-primary-400 font-medium mb-4">
+                    {edu.specialty}
+                  </p>
+                )}
                 
                 <div className="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400 mb-4">
                   <div className="flex items-center space-x-2">

@@ -146,7 +146,7 @@ const Hero = () => {
                 className="text-center glass-effect p-6 rounded-2xl"
               >
                 <div className="text-3xl font-bold gradient-text">
-                  <AnimatedCounter from={0} to={3} suffix="+" />
+                  <AnimatedCounter from={0} to={5} suffix="+" />
                 </div>
                 <div className="text-sm text-slate-500 dark:text-slate-400">Años Experiencia</div>
               </motion.div>

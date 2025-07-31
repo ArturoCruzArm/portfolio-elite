@@ -18,6 +18,34 @@ const Experience = () => {
       color: 'from-blue-500 to-purple-500'
     },
     {
+      company: 'AI Labs',
+      position: 'Desarrollador Freelancer',
+      period: '2020 – 2022',
+      location: 'Remoto',
+      achievements: [
+        'Desarrollo de aplicaciones web con React y Node.js',
+        'Implementación de APIs RESTful y microservicios',
+        'Integración de soluciones de inteligencia artificial',
+        'Colaboración en proyectos de análisis de datos'
+      ],
+      tech: ['React', 'Node.js', 'JavaScript', 'Python', 'AI/ML'],
+      color: 'from-green-500 to-blue-500'
+    },
+    {
+      company: 'Instituto Tecnológico Nacional de México Campus León',
+      position: 'Desarrollador Web',
+      period: '2019 – 2020',
+      location: 'León, Guanajuato',
+      achievements: [
+        'Desarrollo y mantenimiento del sitio web institucional',
+        'Programación de sistemas internos de gestión académica',
+        'Implementación de módulos administrativos',
+        'Optimización de bases de datos MySQL'
+      ],
+      tech: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
       company: 'Producciones Foro 7',
       position: 'Fundador & Productor Multimedia',
       period: 'Desde 2012 – Actualidad',

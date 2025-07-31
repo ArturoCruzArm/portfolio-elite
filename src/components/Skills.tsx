@@ -30,11 +30,12 @@ const Skills = () => {
       title: 'Otros',
       icon: '🚀',
       skills: [
+        { name: 'Inglés (Intermedio-Avanzado)', level: 85, color: 'from-blue-500 to-indigo-500' },
         { name: 'DevOps Básico', level: 80, color: 'from-green-500 to-teal-500' },
         { name: 'Cisco Networking', level: 85, color: 'from-blue-600 to-cyan-600' },
         { name: 'Gestión de Proyectos', level: 90, color: 'from-indigo-500 to-blue-500' },
         { name: 'Git/GitHub', level: 92, color: 'from-slate-600 to-slate-800' },
-        { name: 'Educación Financiera', level: 88, color: 'from-green-600 to-emerald-600' }
+        { name: 'Big Data & Analytics', level: 80, color: 'from-purple-600 to-pink-600' }
       ]
     }
   ]

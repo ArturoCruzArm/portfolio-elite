@@ -29,13 +29,16 @@ const About = () => {
           >
             <div className="glass-effect p-8 rounded-2xl">
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
-                Soy un <span className="gradient-text font-semibold">desarrollador Full-Stack especializado en Java y React</span>, 
-                con sólida experiencia en automatización de procesos, backend empresarial y dirección creativa audiovisual.
+                Soy un <span className="gradient-text font-semibold">desarrollador Full-Stack especializado en Java y React</span> 
+                con <span className="text-primary-500 font-semibold">5 años de experiencia profesional</span> en automatización de procesos, 
+                backend empresarial y desarrollo web avanzado.
               </p>
               
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
-                Estudiante activo en <span className="text-primary-500 font-semibold">UVEG</span>, con habilidades certificadas 
-                en redes, programación, DevOps básico y edición multimedia.
+                <span className="text-primary-500 font-semibold">Graduado del Instituto Tecnológico de León (2016-2021)</span> 
+                y actualmente estudiante en <span className="text-primary-500 font-semibold">UVEG</span> especializándome en 
+                <span className="gradient-text font-semibold"> Big Data y Análisis de Datos</span>. 
+                Nivel de inglés <span className="text-primary-500 font-semibold">intermedio-avanzado</span>.
               </p>
               
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">

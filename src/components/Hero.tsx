@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, MapPin, Download } from 'lucide-react'
+import { AnimatedCounter, FloatingElement, MorphingShape } from './AdvancedAnimations'
 
 const Hero = () => {
   const [text, setText] = useState('')
@@ -48,8 +49,18 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background Blobs */}
+      {/* Advanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
+        <FloatingElement duration={8} yOffset={-30}>
+          <MorphingShape className="top-20 left-20 w-32 h-32 opacity-60" />
+        </FloatingElement>
+        <FloatingElement duration={12} yOffset={20}>
+          <MorphingShape className="top-1/2 right-20 w-24 h-24 opacity-40" />
+        </FloatingElement>
+        <FloatingElement duration={10} yOffset={-15}>
+          <MorphingShape className="bottom-20 left-1/3 w-28 h-28 opacity-50" />
+        </FloatingElement>
+        
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -125,21 +136,27 @@ const Hero = () => {
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
               >
-                <div className="text-3xl font-bold gradient-text">150+</div>
+                <div className="text-3xl font-bold gradient-text">
+                  <AnimatedCounter from={0} to={150} suffix="+" />
+                </div>
                 <div className="text-sm text-slate-500 dark:text-slate-400">Eventos Producidos</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
               >
-                <div className="text-3xl font-bold gradient-text">3+</div>
+                <div className="text-3xl font-bold gradient-text">
+                  <AnimatedCounter from={0} to={3} suffix="+" />
+                </div>
                 <div className="text-sm text-slate-500 dark:text-slate-400">Años Experiencia</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
               >
-                <div className="text-3xl font-bold gradient-text">80%</div>
+                <div className="text-3xl font-bold gradient-text">
+                  <AnimatedCounter from={0} to={80} suffix="%" />
+                </div>
                 <div className="text-sm text-slate-500 dark:text-slate-400">Optimización SQL</div>
               </motion.div>
             </div>

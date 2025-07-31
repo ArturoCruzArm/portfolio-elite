@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import ErrorBoundary from './components/ErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
+import CustomCursor from './components/Cursor'
+import ThemeCustomizer from './components/ThemeCustomizer'
 
 // Lazy loading para componentes pesados
 const Hero = lazy(() => import('./components/Hero'))
@@ -19,6 +21,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [isLoading, setIsLoading] = useState(true)
+  const [currentTheme, setCurrentTheme] = useState('Elite Blue')
 
   const navigation = [
     { name: 'Inicio', href: '#hero' },
@@ -108,6 +111,7 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+      <CustomCursor />
       <div className="bg-white dark:bg-dark-900 text-slate-900 dark:text-white">
         {/* Matrix Background */}
         <ErrorBoundary fallback={<div />}>
@@ -263,6 +267,12 @@ function App() {
             ↑
           </motion.div>
         </motion.button>
+
+        {/* Theme Customizer */}
+        <ThemeCustomizer 
+          currentTheme={currentTheme}
+          onThemeChange={setCurrentTheme}
+        />
       </div>
     </div>
   )

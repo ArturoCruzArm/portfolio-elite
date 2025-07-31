@@ -1,0 +1,74 @@
+{
+  "name": "Juan Arturo Cruz Armenta - Portafolio Elite",
+  "short_name": "Portafolio Elite",
+  "description": "Portafolio profesional desarrollado con React + TypeScript + Three.js por Juan Arturo Cruz Armenta, Desarrollador Full Stack",
+  "start_url": "/portfolio-elite/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "developer"],
+  "lang": "es",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/portfolio-elite/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/portfolio-elite/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/portfolio-elite/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/portfolio-elite/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Vista de escritorio del portafolio elite"
+    },
+    {
+      "src": "/portfolio-elite/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Vista móvil del portafolio elite"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Ir directo a la sección de contacto",
+      "url": "/portfolio-elite/#contact",
+      "icons": [
+        {
+          "src": "/portfolio-elite/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Proyectos",
+      "short_name": "Proyectos",
+      "description": "Ver experiencia y proyectos",
+      "url": "/portfolio-elite/#experience",
+      "icons": [
+        {
+          "src": "/portfolio-elite/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
+import * as THREE from 'three'
 // import * as random from 'maath/random/dist/maath-random.esm'
 
 interface StarsProps {
@@ -8,7 +9,7 @@ interface StarsProps {
 }
 
 function Stars({ count = 5000 }: StarsProps) {
-  const ref = useRef<any>(null)
+  const ref = useRef<THREE.Points>(null)
   
   const [sphere] = useMemo(() => {
     const positions = new Float32Array(count * 3)
@@ -51,7 +52,7 @@ interface FloatingCubesProps {
 }
 
 function FloatingCubes({ count = 50 }: FloatingCubesProps) {
-  const meshRef = useRef<any>(null)
+  const meshRef = useRef<THREE.InstancedMesh>(null)
   
   const cubes = useMemo(() => {
     const temp = []

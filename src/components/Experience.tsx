@@ -47,14 +47,14 @@ const Experience = () => {
     },
     {
       company: 'Producciones Foro 7',
-      position: 'Fundador & Productor Multimedia',
-      period: 'Desde 2012 – Actualidad',
+      position: 'Fundador & Productor Multimedia (Fines de Semana)',
+      period: 'Desde 2019 – Actualidad',
       location: 'León, Guanajuato',
       achievements: [
         'Dirección y postproducción de más de 150 eventos sociales',
         'Edición profesional con Adobe Suite (Diplomado internacional)',
         'Gestión integral de clientes, logística y entrega visual',
-        'Crecimiento sostenido durante 12+ años'
+        'Trabajo de fines de semana, busco desarrollo software entre semana'
       ],
       tech: ['Adobe Premiere', 'After Effects', 'Fotografía 4K', 'Gestión'],
       color: 'from-purple-500 to-pink-500'

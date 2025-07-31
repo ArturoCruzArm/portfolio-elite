@@ -27,11 +27,25 @@ const Education = () => {
     { name: 'Técnico en Informática', org: 'Fundación Carlos Slim', year: '2023' },
     { name: 'Curador de Datos', org: 'Fundación Carlos Slim', year: '2023' },
     { name: 'Desarrollador Web', org: 'Fundación Carlos Slim', year: '2023' },
-    { name: 'Spring Boot, Java, React.js', org: 'SoloLearn', year: '2023' },
-    { name: 'Python, PHP, SQL', org: 'SoloLearn', year: '2023' },
+    { name: 'Desarrollador de Contenido Digital', org: 'Fundación Carlos Slim', year: '2023' },
+    { name: 'Asistente Web', org: 'Certificación Profesional', year: '2023' },
+    { name: 'Java Programming', org: 'SoloLearn', year: '2023' },
+    { name: 'JavaScript', org: 'SoloLearn', year: '2023' },
+    { name: 'Python Core', org: 'SoloLearn', year: '2023' },
+    { name: 'PHP', org: 'SoloLearn', year: '2023' },
+    { name: 'SQL', org: 'SoloLearn', year: '2023' },
+    { name: 'HTML', org: 'SoloLearn', year: '2023' },
+    { name: 'CSS', org: 'SoloLearn', year: '2023' },
+    { name: 'jQuery', org: 'SoloLearn', year: '2023' },
+    { name: 'C Programming', org: 'SoloLearn', year: '2023' },
+    { name: 'C++', org: 'SoloLearn', year: '2023' },
+    { name: 'C#', org: 'SoloLearn', year: '2023' },
+    { name: 'Ruby', org: 'SoloLearn', year: '2023' },
+    { name: 'Swift 4', org: 'SoloLearn', year: '2023' },
+    { name: 'Ofimática', org: 'Certificación Profesional', year: '2023' },
     { name: 'Cisco Networking (VLANs, Routing)', org: 'Cisco Academy', year: '2023' },
     { name: 'Edición de Video Digital', org: 'Diplomado Internacional', year: '2022' },
-    { name: 'Educación Financiera', org: 'Gobierno de México', year: '2023', grade: '9/10' }
+    { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10' }
   ]
 
   return (

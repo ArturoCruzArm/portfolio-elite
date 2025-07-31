@@ -35,16 +35,17 @@ const About = () => {
               </p>
               
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
-                <span className="text-primary-500 font-semibold">Graduado del Instituto Tecnológico de León (2016-2021)</span> 
+                Estudié en el <span className="text-primary-500 font-semibold">Instituto Tecnológico de León (2016-2021)</span> 
                 y actualmente estudiante en <span className="text-primary-500 font-semibold">UVEG</span> especializándome en 
                 <span className="gradient-text font-semibold"> Big Data y Análisis de Datos</span>. 
                 Nivel de inglés <span className="text-primary-500 font-semibold">intermedio-avanzado</span>.
               </p>
               
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-                Desde los <span className="text-primary-500 font-semibold">12 años</span> dirijo 
-                <span className="gradient-text font-semibold"> Producciones Foro 7</span>, combinando lo técnico con lo artístico 
-                para crear soluciones integrales y experiencias visuales memorables.
+                Desde <span className="text-primary-500 font-semibold">2019</span> dirijo 
+                <span className="gradient-text font-semibold"> Producciones Foro 7</span> (fines de semana), 
+                combinando lo técnico con lo artístico. Busco oportunidades de desarrollo de software entre semana 
+                para crear soluciones integrales y experiencias digitales memorables.
               </p>
             </div>
 

@@ -21,24 +21,39 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-200 dark:bg-dark-800;
+  background: rgb(229, 231, 235);
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: rgb(30, 41, 59);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-500 rounded-full;
+  background: rgb(59, 130, 246);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-600;
+  background: rgb(37, 99, 235);
 }
 
 /* Custom utilities */
 .gradient-text {
-  @apply bg-gradient-to-r from-primary-600 via-purple-600 to-primary-500 bg-clip-text text-transparent;
+  background: linear-gradient(to right, rgb(37, 99, 235), rgb(147, 51, 234), rgb(59, 130, 246));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .glass-effect {
-  @apply backdrop-blur-md bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+html.dark .glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .neon-glow {

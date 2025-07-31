@@ -4,7 +4,7 @@ import { Code2, Palette, Rocket, Heart } from 'lucide-react'
 const About = () => {
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+    <section id="about" className="py-20 bg-slate-50 dark:bg-dark-800 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,17 +28,17 @@ const About = () => {
             className="space-y-6"
           >
             <div className="glass-effect p-8 rounded-2xl">
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
                 Soy un <span className="gradient-text font-semibold">desarrollador Full-Stack especializado en Java y React</span>, 
                 con sólida experiencia en automatización de procesos, backend empresarial y dirección creativa audiovisual.
               </p>
               
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
                 Estudiante activo en <span className="text-primary-500 font-semibold">UVEG</span>, con habilidades certificadas 
                 en redes, programación, DevOps básico y edición multimedia.
               </p>
               
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                 Desde los <span className="text-primary-500 font-semibold">12 años</span> dirijo 
                 <span className="gradient-text font-semibold"> Producciones Foro 7</span>, combinando lo técnico con lo artístico 
                 para crear soluciones integrales y experiencias visuales memorables.
@@ -52,13 +52,13 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="glass-effect p-6 rounded-2xl border-l-4 border-primary-500"
             >
-              <p className="text-xl italic text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xl italic text-slate-600 dark:text-slate-400 mb-4">
                 "Apasionado por la tecnología y el arte visual. Disfruto resolver problemas complejos con código 
                 y capturar historias a través del lente."
               </p>
               <div className="flex items-center space-x-2">
                 <Heart className="w-5 h-5 text-red-500" />
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                   Mi meta: integrar ambas disciplinas para crear experiencias digitales memorables
                 </span>
               </div>
@@ -78,7 +78,7 @@ const About = () => {
             >
               <Code2 className="w-12 h-12 text-primary-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Backend Expert</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-slate-600 dark:text-slate-400">
                 Java Spring Boot, optimización SQL +80%, automatización con jobs y triggers
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ const About = () => {
             >
               <Palette className="w-12 h-12 text-purple-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Productor Multimedia</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-slate-600 dark:text-slate-400">
                 150+ eventos sociales, edición 4K con Adobe Suite, fotografía profesional
               </p>
             </motion.div>
@@ -100,7 +100,7 @@ const About = () => {
             >
               <Rocket className="w-12 h-12 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Emprendedor</h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-slate-600 dark:text-slate-400">
                 Fundador de Producciones Foro 7 desde 2012, gestión integral de proyectos
               </p>
             </motion.div>

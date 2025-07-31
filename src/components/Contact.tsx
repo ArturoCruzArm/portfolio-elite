@@ -38,7 +38,7 @@ const Contact = () => {
       label: 'GitHub',
       value: 'ArturoCruzArm',
       url: 'https://github.com/ArturoCruzArm',
-      color: 'hover:bg-gray-900 hover:text-white'
+      color: 'hover:bg-slate-900 hover:text-white'
     },
     {
       icon: Linkedin,
@@ -60,7 +60,7 @@ const Contact = () => {
   }
   
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-slate-50 dark:bg-dark-800 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ const Contact = () => {
             🌐 Contacto & Portafolio
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             ¿Listo para colaborar? Contáctame para discutir tu próximo proyecto
           </p>
         </motion.div>
@@ -109,10 +109,10 @@ const Contact = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                           {item.label}
                         </p>
-                        <p className="text-gray-800 dark:text-gray-200 font-medium">
+                        <p className="text-slate-800 dark:text-slate-200 font-medium">
                           {item.value}
                         </p>
                       </div>
@@ -159,12 +159,12 @@ const Contact = () => {
                       whileHover={{ scale: 1.02, x: 10 }}
                       className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-300 group ${social.color}`}
                     >
-                      <div className="p-3 bg-gray-100 dark:bg-dark-700 rounded-full group-hover:scale-110 transition-all duration-300">
+                      <div className="p-3 bg-slate-100 dark:bg-dark-700 rounded-full group-hover:scale-110 transition-all duration-300">
                         <IconComponent className="w-5 h-5" />
                       </div>
                       
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                           {social.label}
                         </p>
                         <p className="font-medium">
@@ -197,7 +197,7 @@ const Contact = () => {
                 className="text-center"
               >
                 <div className="text-6xl gradient-text mb-6">“</div>
-                <p className="text-xl italic text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-xl italic text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
                   Apasionado por la tecnología y el arte visual. Disfruto resolver problemas complejos con código 
                   y capturar historias a través del lente. Mi meta es integrar ambas disciplinas para crear 
                   experiencias digitales memorables.
@@ -211,7 +211,7 @@ const Contact = () => {
                 Información Adicional
               </h3>
               
-              <div className="space-y-4 text-gray-700 dark:text-gray-300">
+              <div className="space-y-4 text-slate-700 dark:text-slate-300">
                 <div className="flex justify-between items-center p-3 rounded-lg bg-white/50 dark:bg-white/5">
                   <span className="font-medium">Fecha de Nacimiento:</span>
                   <span>18 de octubre de 1993</span>
@@ -236,7 +236,7 @@ const Contact = () => {
               <h4 className="text-xl font-bold gradient-text mb-4">
                 ¿Listo para colaborar?
               </h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-slate-600 dark:text-slate-400 mb-6">
                 Reels y muestras creativas disponibles bajo solicitud
               </p>
               <motion.a

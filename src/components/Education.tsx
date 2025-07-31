@@ -69,11 +69,11 @@ const Education = () => {
                   {edu.institution}
                 </h3>
                 
-                <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
+                <h4 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-4">
                   {edu.degree}
                 </h4>
                 
-                <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <div className="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400 mb-4">
                   <div className="flex items-center space-x-2">
                     <Clock className="w-4 h-4" />
                     <span>{edu.completion}</span>
@@ -100,7 +100,7 @@ const Education = () => {
             <h3 className="text-3xl font-bold gradient-text mb-4">
               🏅 Certificaciones Técnicas
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-slate-600 dark:text-slate-400">
               Formación continua y especialización en tecnologías actuales
             </p>
           </div>
@@ -114,15 +114,15 @@ const Education = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -3 }}
-                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300"
+                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300"
               >
                 <div className="flex items-start space-x-3">
                   <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
                   <div className="flex-1">
-                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-1">
                       {cert.name}
                     </h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
                       {cert.org}
                     </p>
                     <div className="flex items-center justify-between">
@@ -154,7 +154,7 @@ const Education = () => {
             <h4 className="text-xl font-bold gradient-text mb-2">
               Aprendizaje Continuo
             </h4>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-slate-600 dark:text-slate-400">
               Comprometido con la actualización constante en tecnologías emergentes y mejores prácticas de desarrollo
             </p>
           </motion.div>

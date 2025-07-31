@@ -34,7 +34,7 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-dark-800 relative overflow-hidden">
+    <section id="experience" className="py-20 bg-slate-50 dark:bg-dark-800 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,11 +69,11 @@ const Experience = () => {
                       {exp.company}
                     </motion.h3>
                     
-                    <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+                    <h4 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-4">
                       {exp.position}
                     </h4>
 
-                    <div className="flex flex-wrap gap-4 mb-6 text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex flex-wrap gap-4 mb-6 text-sm text-slate-500 dark:text-slate-400">
                       <div className="flex items-center space-x-2">
                         <Calendar className="w-4 h-4" />
                         <span>{exp.period}</span>
@@ -95,7 +95,7 @@ const Experience = () => {
                           className="flex items-start space-x-3"
                         >
                           <TrendingUp className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
+                          <span className="text-slate-700 dark:text-slate-300">{achievement}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -103,7 +103,7 @@ const Experience = () => {
 
                   <div className="space-y-4">
                     <div>
-                      <h5 className="font-semibold text-gray-700 dark:text-gray-300 mb-3">Tecnologías</h5>
+                      <h5 className="font-semibold text-slate-700 dark:text-slate-300 mb-3">Tecnologías</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.tech.map((tech, techIndex) => (
                           <motion.span
@@ -128,7 +128,7 @@ const Experience = () => {
                       <div className="text-lg font-bold gradient-text">
                         {index === 0 ? '3+' : '12+'}
                       </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
+                      <div className="text-sm text-slate-500 dark:text-slate-400">
                         Años de Experiencia
                       </div>
                     </motion.div>

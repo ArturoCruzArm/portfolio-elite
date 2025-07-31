@@ -103,7 +103,7 @@ const Hero = () => {
 
           {/* Typing Animation */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-4 h-20 flex items-center justify-center">
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-4 h-20 flex items-center justify-center">
               <span className="border-r-2 border-primary-500 pr-2 animate-pulse">
                 {text}
               </span>
@@ -112,7 +112,7 @@ const Hero = () => {
 
           {/* Location */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="flex items-center justify-center space-x-2 text-lg text-gray-500 dark:text-gray-400">
+            <div className="flex items-center justify-center space-x-2 text-lg text-slate-500 dark:text-slate-400">
               <MapPin className="w-5 h-5" />
               <span>León, Guanajuato, México</span>
             </div>
@@ -126,28 +126,28 @@ const Hero = () => {
                 className="text-center glass-effect p-6 rounded-2xl"
               >
                 <div className="text-3xl font-bold gradient-text">150+</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Eventos Producidos</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Eventos Producidos</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
               >
                 <div className="text-3xl font-bold gradient-text">3+</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Años Experiencia</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Años Experiencia</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
               >
                 <div className="text-3xl font-bold gradient-text">80%</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">Optimización SQL</div>
+                <div className="text-sm text-slate-500 dark:text-slate-400">Optimización SQL</div>
               </motion.div>
             </div>
           </motion.div>
 
           {/* Skills Bar Preview */}
           <motion.div variants={itemVariants} className="mb-12">
-            <h3 className="text-lg font-semibold mb-6 text-gray-700 dark:text-gray-300">
+            <h3 className="text-lg font-semibold mb-6 text-slate-700 dark:text-slate-300">
               Tecnologías Principales
             </h3>
             <div className="space-y-3 max-w-2xl mx-auto">
@@ -160,7 +160,7 @@ const Hero = () => {
                   className="flex items-center space-x-4"
                 >
                   <span className="text-sm font-medium w-20 text-left">{skill.name}</span>
-                  <div className="flex-1 bg-gray-200 dark:bg-dark-700 rounded-full h-2">
+                  <div className="flex-1 bg-slate-200 dark:bg-dark-700 rounded-full h-2">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${skill.level}%` }}
@@ -209,7 +209,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 glass-effect rounded-full hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all duration-300"
+                className="p-3 glass-effect rounded-full hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
               >
                 <Github className="w-6 h-6" />
               </motion.a>

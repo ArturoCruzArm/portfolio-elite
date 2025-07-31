@@ -1,14 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense, lazy } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
-import Education from './components/Education'
-import Contact from './components/Contact'
-import MatrixRain from './components/MatrixRain'
-import ThreeScene from './components/ThreeScene'
+import ErrorBoundary from './components/ErrorBoundary'
+import LoadingSpinner from './components/LoadingSpinner'
+
+// Lazy loading para componentes pesados
+const Hero = lazy(() => import('./components/Hero'))
+const About = lazy(() => import('./components/About'))
+const Skills = lazy(() => import('./components/Skills'))
+const Experience = lazy(() => import('./components/Experience'))
+const Education = lazy(() => import('./components/Education'))
+const Contact = lazy(() => import('./components/Contact'))
+const MatrixRain = lazy(() => import('./components/MatrixRain'))
+const ThreeScene = lazy(() => import('./components/ThreeScene'))
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -104,13 +108,21 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
-      <div className="bg-white dark:bg-dark-900 text-gray-900 dark:text-white">
+      <div className="bg-white dark:bg-dark-900 text-slate-900 dark:text-white">
         {/* Matrix Background */}
-        <MatrixRain />
+        <ErrorBoundary fallback={<div />}>
+          <Suspense fallback={<div />}>
+            <MatrixRain />
+          </Suspense>
+        </ErrorBoundary>
         
         {/* 3D Background */}
         <div className="fixed inset-0 z-0 opacity-30">
-          <ThreeScene />
+          <ErrorBoundary fallback={<div />}>
+            <Suspense fallback={<div />}>
+              <ThreeScene />
+            </Suspense>
+          </ErrorBoundary>
         </div>
 
         {/* Navigation */}
@@ -153,7 +165,7 @@ function App() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={toggleDarkMode}
-                  className="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 transition-colors"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700 transition-colors"
                 >
                   {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </motion.button>
@@ -161,7 +173,7 @@ function App() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-dark-800"
+                  className="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-dark-800"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                   {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -198,12 +210,41 @@ function App() {
 
         {/* Main Content */}
         <main className="relative z-10">
-          <Hero />
-          <About />
-          <Skills />
-          <Experience />
-          <Education />
-          <Contact />
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="lg" text="Cargando sección..." />}>
+              <Hero />
+            </Suspense>
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="md" text="Cargando sobre mí..." />}>
+              <About />
+            </Suspense>
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="md" text="Cargando habilidades..." />}>
+              <Skills />
+            </Suspense>
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="md" text="Cargando experiencia..." />}>
+              <Experience />
+            </Suspense>
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="md" text="Cargando educación..." />}>
+              <Education />
+            </Suspense>
+          </ErrorBoundary>
+          
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingSpinner size="md" text="Cargando contacto..." />}>
+              <Contact />
+            </Suspense>
+          </ErrorBoundary>
         </main>
 
         {/* Scroll to Top Button */}

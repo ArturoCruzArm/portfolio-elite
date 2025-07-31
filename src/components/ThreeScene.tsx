@@ -104,16 +104,22 @@ function FloatingCubes({ count = 50 }: FloatingCubesProps) {
 
 const ThreeScene: React.FC = () => {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 1] }}
-      gl={{ alpha: true, antialias: true }}
-      dpr={[1, 2]}
-    >
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      <Stars count={3000} />
-      <FloatingCubes count={30} />
-    </Canvas>
+    <div style={{ width: '100%', height: '100%' }}>
+      <Canvas
+        camera={{ position: [0, 0, 1] }}
+        gl={{ alpha: true, antialias: true }}
+        dpr={[1, 2]}
+        style={{ background: 'transparent' }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0)
+        }}
+      >
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} />
+        <Stars count={2000} />
+        <FloatingCubes count={20} />
+      </Canvas>
+    </div>
   )
 }
 

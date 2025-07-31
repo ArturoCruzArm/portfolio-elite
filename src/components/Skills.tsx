@@ -33,7 +33,7 @@ const Skills = () => {
         { name: 'DevOps Básico', level: 80, color: 'from-green-500 to-teal-500' },
         { name: 'Cisco Networking', level: 85, color: 'from-blue-600 to-cyan-600' },
         { name: 'Gestión de Proyectos', level: 90, color: 'from-indigo-500 to-blue-500' },
-        { name: 'Git/GitHub', level: 92, color: 'from-gray-600 to-gray-800' },
+        { name: 'Git/GitHub', level: 92, color: 'from-slate-600 to-slate-800' },
         { name: 'Educación Financiera', level: 88, color: 'from-green-600 to-emerald-600' }
       ]
     }
@@ -80,7 +80,7 @@ const Skills = () => {
                     transition={{ duration: 0.6, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
                         {skill.name}
                       </span>
                       <span className="text-sm font-bold text-primary-500">
@@ -88,7 +88,7 @@ const Skills = () => {
                       </span>
                     </div>
                     
-                    <div className="w-full bg-gray-200 dark:bg-dark-700 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-slate-200 dark:bg-dark-700 rounded-full h-3 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -115,7 +115,7 @@ const Skills = () => {
                   <div className="text-2xl font-bold gradient-text">
                     {Math.round(category.skills.reduce((acc, skill) => acc + skill.level, 0) / category.skills.length)}%
                   </div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                  <div className="text-sm text-slate-500 dark:text-slate-400">
                     Promedio General
                   </div>
                 </div>

@@ -188,14 +188,14 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="/cv-juan-arturo-cruz.pdf"
-                download
+                href="/cv-juan-arturo-cruz.html"
+                target="_blank"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 glass-effect border-2 border-primary-500 text-primary-500 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 flex items-center space-x-2"
               >
                 <Download className="w-5 h-5" />
-                <span>Descargar CV</span>
+                <span>Ver CV</span>
               </motion.a>
             </div>
           </motion.div>

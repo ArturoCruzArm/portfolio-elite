@@ -205,7 +205,7 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="/cv-juan-arturo-cruz.html"
+                href="./cv-juan-arturo-cruz.html"
                 target="_blank"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

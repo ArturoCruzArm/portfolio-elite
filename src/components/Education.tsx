@@ -127,7 +127,7 @@ const Education = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
@@ -136,7 +136,7 @@ const Education = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 group"
+                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 group max-w-4xl mx-auto w-full"
               >
                 <div className="flex items-start space-x-4">
                   {/* Contenido del texto - lado izquierdo */}

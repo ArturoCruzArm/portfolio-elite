@@ -172,7 +172,7 @@ const Education = () => {
                   
                   {/* Imagen del certificado - lado derecho */}
                   {cert.image && (
-                    <div className="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-dark-600 group-hover:border-primary-400 transition-colors duration-300 bg-gray-50">
+                    <div className="w-16 h-12 flex-shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-dark-600 group-hover:border-primary-400 transition-colors duration-300 bg-gray-50">
                       <img 
                         src={cert.image} 
                         alt={`Certificado ${cert.name}`}

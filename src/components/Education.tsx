@@ -140,11 +140,13 @@ const Education = () => {
               >
                 {cert.image && (
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <img 
-                      src={cert.image} 
-                      alt={`Certificado ${cert.name}`}
-                      className="w-full h-full object-contain max-w-full max-h-full rounded-xl"
-                    />
+                    <div className="w-full h-full flex items-center justify-center p-4">
+                      <img 
+                        src={cert.image} 
+                        alt={`Certificado ${cert.name}`}
+                        className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-black/80 rounded-xl flex items-center justify-center">
                       <div className="text-center p-4">
                         <h4 className="font-semibold text-white mb-2 text-lg">

@@ -24,28 +24,28 @@ const Education = () => {
   ]
 
   const certifications = [
+    { name: 'Curador de Datos', org: 'Fundación Carlos Slim', year: '2023', image: '/src/assets/certificates/curador-de-datos.jpg' },
+    { name: 'Desarrollador de Contenido Digital', org: 'Fundación Carlos Slim', year: '2023', image: '/src/assets/certificates/desarrollador-de-contenido-digital.jpg' },
+    { name: 'Asistente Web', org: 'Certificación Profesional', year: '2023', image: '/src/assets/certificates/Asistente-web.jpg' },
+    { name: 'Java Programming', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/java.jpg' },
+    { name: 'JavaScript', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/javascript.jpg' },
+    { name: 'Python Core', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/pytho-core.jpg' },
+    { name: 'PHP', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/php.jpg' },
+    { name: 'SQL', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/sql.jpg' },
+    { name: 'HTML', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/html.jpg' },
+    { name: 'CSS', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/css.jpg' },
+    { name: 'jQuery', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/jquery.jpg' },
+    { name: 'C Programming', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/c.jpg' },
+    { name: 'C++', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/c++.jpg' },
+    { name: 'C#', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/c#.jpg' },
+    { name: 'Ruby', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/ruby.jpg' },
+    { name: 'Swift 4', org: 'SoloLearn', year: '2023', image: '/src/assets/certificates/swift-4.jpg' },
+    { name: 'Ofimática', org: 'Certificación Profesional', year: '2023', image: '/src/assets/certificates/ofimatica.jpg' },
+    { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10', image: '/src/assets/certificates/educacion-finaniera.JPG' },
+    { name: 'CCNA R&S: Routing and Switching Essentials', org: 'Cisco Academy', year: '2023', image: '/src/assets/certificates/ccna-routing-switching.JPG' },
+    { name: 'CCNA R&S: Scaling Networks', org: 'Cisco Academy', year: '2023', image: '/src/assets/certificates/ccna-scaling-networks.JPG' },
     { name: 'Técnico en Informática', org: 'Fundación Carlos Slim', year: '2023' },
-    { name: 'Curador de Datos', org: 'Fundación Carlos Slim', year: '2023' },
-    { name: 'Desarrollador Web', org: 'Fundación Carlos Slim', year: '2023' },
-    { name: 'Desarrollador de Contenido Digital', org: 'Fundación Carlos Slim', year: '2023' },
-    { name: 'Asistente Web', org: 'Certificación Profesional', year: '2023' },
-    { name: 'Java Programming', org: 'SoloLearn', year: '2023' },
-    { name: 'JavaScript', org: 'SoloLearn', year: '2023' },
-    { name: 'Python Core', org: 'SoloLearn', year: '2023' },
-    { name: 'PHP', org: 'SoloLearn', year: '2023' },
-    { name: 'SQL', org: 'SoloLearn', year: '2023' },
-    { name: 'HTML', org: 'SoloLearn', year: '2023' },
-    { name: 'CSS', org: 'SoloLearn', year: '2023' },
-    { name: 'jQuery', org: 'SoloLearn', year: '2023' },
-    { name: 'C Programming', org: 'SoloLearn', year: '2023' },
-    { name: 'C++', org: 'SoloLearn', year: '2023' },
-    { name: 'C#', org: 'SoloLearn', year: '2023' },
-    { name: 'Ruby', org: 'SoloLearn', year: '2023' },
-    { name: 'Swift 4', org: 'SoloLearn', year: '2023' },
-    { name: 'Ofimática', org: 'Certificación Profesional', year: '2023' },
-    { name: 'Cisco Networking (VLANs, Routing)', org: 'Cisco Academy', year: '2023' },
-    { name: 'Edición de Video Digital', org: 'Diplomado Internacional', year: '2022' },
-    { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10' }
+    { name: 'Edición de Video Digital', org: 'Diplomado Internacional', year: '2022' }
   ]
 
   return (
@@ -136,27 +136,65 @@ const Education = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -3 }}
-                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300"
+                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="flex items-start space-x-3">
-                  <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-1">
-                      {cert.name}
-                    </h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                      {cert.org}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-primary-500 font-medium">
-                        {cert.year}
-                      </span>
-                      {cert.grade && (
-                        <div className="flex items-center space-x-1">
-                          <Star className="w-4 h-4 text-yellow-500" />
-                          <span className="text-xs font-medium text-yellow-600">
-                            {cert.grade}
-                          </span>
+                {cert.image && (
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <img 
+                      src={cert.image} 
+                      alt={`Certificado ${cert.name}`}
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-black/80 rounded-xl flex items-center justify-center">
+                      <div className="text-center p-4">
+                        <h4 className="font-semibold text-white mb-2 text-lg">
+                          {cert.name}
+                        </h4>
+                        <p className="text-slate-200 mb-2">
+                          {cert.org}
+                        </p>
+                        <span className="text-primary-400 font-medium">
+                          {cert.year}
+                        </span>
+                        {cert.grade && (
+                          <div className="flex items-center justify-center space-x-1 mt-2">
+                            <Star className="w-4 h-4 text-yellow-400" />
+                            <span className="text-yellow-400 font-medium">
+                              {cert.grade}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="relative z-10">
+                  <div className="flex items-start space-x-3">
+                    <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-1">
+                        {cert.name}
+                      </h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                        {cert.org}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-primary-500 font-medium">
+                          {cert.year}
+                        </span>
+                        {cert.grade && (
+                          <div className="flex items-center space-x-1">
+                            <Star className="w-4 h-4 text-yellow-500" />
+                            <span className="text-xs font-medium text-yellow-600">
+                              {cert.grade}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      {cert.image && (
+                        <div className="mt-2 text-xs text-primary-500 opacity-70">
+                          Hover para ver certificado
                         </div>
                       )}
                     </div>

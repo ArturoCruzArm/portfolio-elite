@@ -48,9 +48,9 @@ const Hero = () => {
   ]
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" role="banner" aria-labelledby="hero-title">
       {/* Advanced Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <FloatingElement duration={8} yOffset={-30}>
           <MorphingShape className="top-20 left-20 w-32 h-32 opacity-60" />
         </FloatingElement>
@@ -97,16 +97,19 @@ const Hero = () => {
           {/* Main Title */}
           <motion.div variants={itemVariants} className="mb-8">
             <motion.h1
+              id="hero-title"
               className="text-6xl md:text-8xl lg:text-9xl font-black gradient-text mb-4"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
+              aria-label="Juan Arturo Cruz, Desarrollador Full Stack"
             >
-              🎓 JUAN
+              <span role="img" aria-label="graduación">🎓</span> JUAN
             </motion.h1>
             <motion.h1
               className="text-4xl md:text-6xl lg:text-7xl font-black gradient-text"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
+              aria-hidden="true"
             >
               ARTURO CRUZ
             </motion.h1>
@@ -114,8 +117,8 @@ const Hero = () => {
 
           {/* Typing Animation */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-4 h-20 flex items-center justify-center">
-              <span className="border-r-2 border-primary-500 pr-2 animate-pulse">
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-600 dark:text-slate-300 mb-4 h-20 flex items-center justify-center" aria-live="polite">
+              <span className="border-r-2 border-primary-500 pr-2 animate-pulse" aria-label="Descripción profesional">
                 {text}
               </span>
             </h2>
@@ -123,51 +126,57 @@ const Hero = () => {
 
           {/* Location */}
           <motion.div variants={itemVariants} className="mb-8">
-            <div className="flex items-center justify-center space-x-2 text-lg text-slate-500 dark:text-slate-400">
-              <MapPin className="w-5 h-5" />
+            <address className="flex items-center justify-center space-x-2 text-lg text-slate-500 dark:text-slate-400 not-italic">
+              <MapPin className="w-5 h-5" aria-hidden="true" />
               <span>León, Guanajuato, México</span>
-            </div>
+            </address>
           </motion.div>
 
           {/* Stats */}
-          <motion.div variants={itemVariants} className="mb-12">
+          <motion.div variants={itemVariants} className="mb-12" role="region" aria-label="Estadísticas profesionales">
             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
+                role="group"
+                aria-labelledby="eventos-label"
               >
-                <div className="text-3xl font-bold gradient-text">
+                <div className="text-3xl font-bold gradient-text" aria-label="150 eventos producidos">
                   <AnimatedCounter from={0} to={150} suffix="+" />
                 </div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Eventos Producidos</div>
+                <div id="eventos-label" className="text-sm text-slate-500 dark:text-slate-400">Eventos Producidos</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
+                role="group"
+                aria-labelledby="experiencia-label"
               >
-                <div className="text-3xl font-bold gradient-text">
+                <div className="text-3xl font-bold gradient-text" aria-label="5 años de experiencia">
                   <AnimatedCounter from={0} to={5} suffix="+" />
                 </div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Años Experiencia</div>
+                <div id="experiencia-label" className="text-sm text-slate-500 dark:text-slate-400">Años Experiencia</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="text-center glass-effect p-6 rounded-2xl"
+                role="group"
+                aria-labelledby="optimizacion-label"
               >
-                <div className="text-3xl font-bold gradient-text">
+                <div className="text-3xl font-bold gradient-text" aria-label="80% de optimización SQL">
                   <AnimatedCounter from={0} to={80} suffix="%" />
                 </div>
-                <div className="text-sm text-slate-500 dark:text-slate-400">Optimización SQL</div>
+                <div id="optimizacion-label" className="text-sm text-slate-500 dark:text-slate-400">Optimización SQL</div>
               </motion.div>
             </div>
           </motion.div>
 
           {/* Skills Bar Preview */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <h3 className="text-lg font-semibold mb-6 text-slate-700 dark:text-slate-300">
+          <motion.div variants={itemVariants} className="mb-12" role="region" aria-labelledby="skills-title">
+            <h3 id="skills-title" className="text-lg font-semibold mb-6 text-slate-700 dark:text-slate-300">
               Tecnologías Principales
             </h3>
-            <div className="space-y-3 max-w-2xl mx-auto">
+            <div className="space-y-3 max-w-2xl mx-auto" role="list">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -175,9 +184,10 @@ const Hero = () => {
                   animate={{ width: '100%' }}
                   transition={{ delay: index * 0.2, duration: 1 }}
                   className="flex items-center space-x-4"
+                  role="listitem"
                 >
-                  <span className="text-sm font-medium w-20 text-left">{skill.name}</span>
-                  <div className="flex-1 bg-slate-200 dark:bg-dark-700 rounded-full h-2">
+                  <span className="text-sm font-medium w-20 text-left" id={`skill-${index}`}>{skill.name}</span>
+                  <div className="flex-1 bg-slate-200 dark:bg-dark-700 rounded-full h-2" role="progressbar" aria-labelledby={`skill-${index}`} aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100}>
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${skill.level}%` }}
@@ -185,40 +195,43 @@ const Hero = () => {
                       className="bg-gradient-to-r from-primary-500 to-purple-500 h-2 rounded-full neon-glow"
                     />
                   </div>
-                  <span className="text-sm font-medium w-10 text-right">{skill.level}%</span>
+                  <span className="text-sm font-medium w-10 text-right" aria-hidden="true">{skill.level}%</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Action Buttons */}
-          <motion.div variants={itemVariants} className="mb-12">
+          <motion.div variants={itemVariants} className="mb-12" role="navigation" aria-label="Acciones principales">
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-primary-500 to-purple-500 text-white font-semibold rounded-full shadow-lg neon-glow hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+                aria-label="Ir a la sección de contacto"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5" aria-hidden="true" />
                 <span>Contáctame</span>
               </motion.a>
               
               <motion.a
                 href="./cv-juan-arturo-cruz.html"
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 glass-effect border-2 border-primary-500 text-primary-500 font-semibold rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 flex items-center space-x-2"
+                aria-label="Ver currículum vitae en nueva ventana"
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-5 h-5" aria-hidden="true" />
                 <span>Ver CV</span>
               </motion.a>
             </div>
           </motion.div>
 
           {/* Social Links */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} role="navigation" aria-label="Enlaces a redes sociales">
             <div className="flex justify-center space-x-6">
               <motion.a
                 href="https://github.com/ArturoCruzArm"
@@ -227,8 +240,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 glass-effect rounded-full hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
+                aria-label="Visitar perfil de GitHub"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-6 h-6" aria-hidden="true" />
               </motion.a>
               
               <motion.a
@@ -238,8 +252,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 glass-effect rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300"
+                aria-label="Visitar perfil de LinkedIn"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-6 h-6" aria-hidden="true" />
               </motion.a>
               
               <motion.a
@@ -247,8 +262,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 glass-effect rounded-full hover:bg-red-500 hover:text-white transition-all duration-300"
+                aria-label="Enviar correo electrónico"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-6 h-6" aria-hidden="true" />
               </motion.a>
             </div>
           </motion.div>
@@ -258,8 +274,17 @@ const Hero = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            aria-label="Desplazar hacia abajo para ver más contenido"
+            role="button"
+            tabIndex={0}
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
           >
-            <div className="w-6 h-10 border-2 border-primary-500 rounded-full flex justify-center">
+            <div className="w-6 h-10 border-2 border-primary-500 rounded-full flex justify-center" aria-hidden="true">
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}

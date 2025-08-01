@@ -37,7 +37,7 @@ const Education = () => {
     { name: 'jQuery', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/jquery.jpg' },
     { name: 'C Programming', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/c.jpg' },
     { name: 'C++', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/c++.jpg' },
-    { name: 'C#', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/c#.jpg' },
+    { name: 'C#', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/csharp.jpg' },
     { name: 'Ruby', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/ruby.jpg' },
     { name: 'Swift 4', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/swift-4.jpg' },
     { name: 'Ofimática', org: 'Certificación Profesional', year: '2023', image: '/portfolio-elite/certificates/ofimatica.jpg' },

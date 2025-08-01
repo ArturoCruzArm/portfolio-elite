@@ -44,7 +44,7 @@ const Education = () => {
     { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10', image: '/portfolio-elite/certificates/educacion-finaniera.JPG' },
     { name: 'CCNA R&S: Routing and Switching Essentials', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-routing-switching.JPG' },
     { name: 'CCNA R&S: Scaling Networks', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-scaling-networks.JPG' },
-    { name: 'Técnico en Informática', org: 'Fundación Carlos Slim', year: '2023' },
+    { name: 'Técnico en Informática', org: 'Fundación Carlos Slim', year: '2023', image: '/portfolio-elite/certificates/tecnico-informatica.jpg' },
     { name: 'Edición de Video Digital', org: 'Diplomado Internacional', year: '2022' }
   ]
 
@@ -135,44 +135,12 @@ const Education = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -3 }}
-                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 relative overflow-hidden group"
+                whileHover={{ scale: 1.02, y: -2 }}
+                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 group"
               >
-                {cert.image && (
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-full h-full flex items-center justify-center p-4">
-                      <img 
-                        src={cert.image} 
-                        alt={`Certificado ${cert.name}`}
-                        className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-black/80 rounded-xl flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <h4 className="font-semibold text-white mb-2 text-lg">
-                          {cert.name}
-                        </h4>
-                        <p className="text-slate-200 mb-2">
-                          {cert.org}
-                        </p>
-                        <span className="text-primary-400 font-medium">
-                          {cert.year}
-                        </span>
-                        {cert.grade && (
-                          <div className="flex items-center justify-center space-x-1 mt-2">
-                            <Star className="w-4 h-4 text-yellow-400" />
-                            <span className="text-yellow-400 font-medium">
-                              {cert.grade}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                <div className="relative z-10">
-                  <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-4">
+                  {/* Contenido del texto - lado izquierdo */}
+                  <div className="flex items-start space-x-3 flex-1">
                     <Award className="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" />
                     <div className="flex-1">
                       <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-1">
@@ -196,11 +164,23 @@ const Education = () => {
                       </div>
                       {cert.image && (
                         <div className="mt-2 text-xs text-primary-500 opacity-70">
-                          Hover para ver certificado
+                          📜 Ver certificado →
                         </div>
                       )}
                     </div>
                   </div>
+                  
+                  {/* Imagen del certificado - lado derecho */}
+                  {cert.image && (
+                    <div className="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-lg border border-slate-200 dark:border-dark-600 group-hover:border-primary-400 transition-colors duration-300">
+                      <img 
+                        src={cert.image} 
+                        alt={`Certificado ${cert.name}`}
+                        className="w-full h-full object-contain bg-white p-1 group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

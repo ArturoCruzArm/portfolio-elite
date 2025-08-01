@@ -40,7 +40,7 @@ const Education = () => {
     { name: 'C#', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/csharp.jpg' },
     { name: 'Ruby', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/ruby.jpg' },
     { name: 'Swift 4', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/swift-4.jpg' },
-    { name: 'Ofimática', org: 'Certificación Profesional', year: '2023', image: '/portfolio-elite/certificates/ofimatica.jpg' },
+    { name: 'Líder', org: 'Fundación Carlos Slim', year: '2023', image: '/portfolio-elite/certificates/lider-fundacion-carlos-slim.jpg' },
     { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10', image: '/portfolio-elite/certificates/educacion-finaniera.JPG' },
     { name: 'CCNA R&S: Routing and Switching Essentials', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-routing-switching.JPG' },
     { name: 'CCNA R&S: Scaling Networks', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-scaling-networks.JPG' },
@@ -143,7 +143,7 @@ const Education = () => {
                     <img 
                       src={cert.image} 
                       alt={`Certificado ${cert.name}`}
-                      className="w-full h-full object-cover rounded-xl"
+                      className="w-full h-full object-contain max-w-full max-h-full rounded-xl"
                     />
                     <div className="absolute inset-0 bg-black/80 rounded-xl flex items-center justify-center">
                       <div className="text-center p-4">

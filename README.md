@@ -163,7 +163,7 @@ Este portafolio fue diseñado para:
 - 📧 **Email Alternativo**: foro7.arturocruz@gmail.com
 - 🔗 **LinkedIn**: [juanarturocruzarmenta](https://linkedin.com/in/juanarturocruzarmenta)
 - 💻 **GitHub**: [ArturoCruzArm](https://github.com/ArturoCruzArm)
-- 🌐 **Portfolio**: [Ver en vivo](https://artucruzarm.github.io/portfolio-elite/)
+- 🌐 **Portfolio**: [Ver en vivo](https://arturocruzarm.github.io/portfolio-elite/)
 
 ## 📄 Licencia
 

@@ -1,11 +1,14 @@
 import { useState, useEffect, Suspense, lazy } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Moon, Sun, Menu, X } from 'lucide-react'
+import { Moon, Sun, Menu, X, Zap } from 'lucide-react'
 import ErrorBoundary from './components/ErrorBoundary'
 import LoadingSpinner from './components/LoadingSpinner'
 import CustomCursor from './components/Cursor'
 import ThemeCustomizer from './components/ThemeCustomizer'
 import PresentationMode from './components/PresentationMode'
+import SEOHead from './components/SEOHead'
+import { usePerformance } from './hooks/usePerformance'
+import { useKeyboardNavigation } from './hooks/useKeyboardNavigation'
 
 // Lazy loading para componentes pesados
 const Hero = lazy(() => import('./components/Hero'))
@@ -24,6 +27,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [currentTheme, setCurrentTheme] = useState('Elite Blue')
   const [presentationMode, setPresentationMode] = useState(false)
+  const [liteMode, setLiteMode] = useState(false)
+  
+  const performance = usePerformance()
 
   const navigation = [
     { name: 'Inicio', href: '#hero' },
@@ -34,6 +40,8 @@ function App() {
     { name: 'Contacto', href: '#contact' },
   ]
 
+  const { announceToScreenReader } = useKeyboardNavigation(navigation)
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -43,8 +51,15 @@ function App() {
       document.documentElement.classList.add('dark')
     }
 
-    // Loading animation
-    setTimeout(() => setIsLoading(false), 2000)
+    // Auto-activar modo lite en dispositivos de bajos recursos
+    const savedLiteMode = localStorage.getItem('liteMode')
+    if (savedLiteMode === 'true' || performance.isLowEnd) {
+      setLiteMode(true)
+    }
+
+    // Loading animation - más rápido en dispositivos lentos
+    const loadingTime = performance.isLowEnd ? 1000 : 2000
+    setTimeout(() => setIsLoading(false), loadingTime)
 
     // Intersection Observer for active section
     const sections = document.querySelectorAll('section')
@@ -61,7 +76,7 @@ function App() {
 
     sections.forEach((section) => observer.observe(section))
     return () => sections.forEach((section) => observer.unobserve(section))
-  }, [])
+  }, [performance.isLowEnd])
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
@@ -75,6 +90,11 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' })
       setMobileMenuOpen(false)
     }
+  }
+
+  const toggleLiteMode = () => {
+    setLiteMode(!liteMode)
+    localStorage.setItem('liteMode', (!liteMode).toString())
   }
 
   if (isLoading) {
@@ -113,23 +133,28 @@ function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+      <SEOHead />
       <CustomCursor />
       <div className="bg-white dark:bg-dark-900 text-slate-900 dark:text-white">
-        {/* Matrix Background */}
-        <ErrorBoundary fallback={<div />}>
-          <Suspense fallback={<div />}>
-            <MatrixRain />
-          </Suspense>
-        </ErrorBoundary>
-        
-        {/* 3D Background */}
-        <div className="fixed inset-0 z-0 opacity-30">
+        {/* Matrix Background - Solo si no está en modo lite */}
+        {!liteMode && !performance.shouldReduceAnimations && (
           <ErrorBoundary fallback={<div />}>
             <Suspense fallback={<div />}>
-              <ThreeScene />
+              <MatrixRain />
             </Suspense>
           </ErrorBoundary>
-        </div>
+        )}
+        
+        {/* 3D Background - Solo si soporta WebGL y no está en modo lite */}
+        {!liteMode && performance.supportsWebGL && !performance.shouldReduceAnimations && (
+          <div className="fixed inset-0 z-0 opacity-30">
+            <ErrorBoundary fallback={<div />}>
+              <Suspense fallback={<div />}>
+                <ThreeScene />
+              </Suspense>
+            </ErrorBoundary>
+          </div>
+        )}
 
         {/* Navigation */}
         <motion.nav
@@ -148,19 +173,24 @@ function App() {
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
-                {navigation.map((item) => (
+                {navigation.map((item, index) => (
                   <motion.button
                     key={item.name}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`px-3 py-2 rounded-lg transition-all duration-300 ${
+                    whileHover={{ scale: performance.shouldReduceAnimations ? 1 : 1.1 }}
+                    whileTap={{ scale: performance.shouldReduceAnimations ? 1 : 0.95 }}
+                    onClick={() => {
+                      scrollToSection(item.href)
+                      announceToScreenReader(`Navegando a ${item.name}`)
+                    }}
+                    className={`px-3 py-2 rounded-lg transition-all duration-300 focus-visible:outline-2 focus-visible:outline-primary-500 ${
                       activeSection === item.href.substring(1)
                         ? 'bg-primary-500 text-white neon-glow'
                         : 'hover:bg-primary-100 dark:hover:bg-primary-900/20'
                     }`}
+                    aria-label={`Ir a la sección ${item.name} (Atajo: ${index + 1})`}
+                    aria-current={activeSection === item.href.substring(1) ? 'page' : undefined}
                   >
-                    {item.name}
+                    <span aria-hidden="true">{index + 1}.</span> {item.name}
                   </motion.button>
                 ))}
               </div>
@@ -176,6 +206,29 @@ function App() {
                   <i className="fas fa-presentation"></i>
                   Presentación
                 </motion.button>
+
+                {/* Performance Status & Lite Mode Toggle */}
+                <div className="hidden md:flex items-center space-x-2">
+                  {performance.isLowEnd && (
+                    <div className="text-xs text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                      <Zap className="w-3 h-3" />
+                      Auto-optimizado
+                    </div>
+                  )}
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={toggleLiteMode}
+                    className={`p-2 rounded-lg transition-colors text-xs ${
+                      liteMode 
+                        ? 'bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300' 
+                        : 'bg-slate-100 dark:bg-dark-800 hover:bg-slate-200 dark:hover:bg-dark-700'
+                    }`}
+                    title={liteMode ? 'Modo Lite Activo - Mejor rendimiento' : 'Activar Modo Lite'}
+                  >
+                    <Zap className="w-4 h-4" />
+                  </motion.button>
+                </div>
                 
                 <motion.button
                   whileHover={{ scale: 1.1 }}
@@ -225,7 +278,7 @@ function App() {
         </motion.nav>
 
         {/* Main Content */}
-        <main className="relative z-10">
+        <main id="main-content" className="relative z-10" role="main">
           <ErrorBoundary>
             <Suspense fallback={<LoadingSpinner size="lg" text="Cargando sección..." />}>
               <Hero />
@@ -291,6 +344,22 @@ function App() {
           isOpen={presentationMode}
           onClose={() => setPresentationMode(false)}
         />
+
+        {/* Keyboard Navigation Helper */}
+        <div className="fixed bottom-4 left-4 z-30 text-xs text-slate-600 dark:text-slate-400 bg-white/80 dark:bg-dark-800/80 backdrop-blur-sm rounded-lg p-2 max-w-xs">
+          <div className="font-medium mb-1">⌨️ Navegación por teclado:</div>
+          <div>• Teclas 1-6: Ir a secciones</div>
+          <div>• Alt + ↑/↓: Navegar</div>
+          <div>• ?: Ayuda completa</div>
+        </div>
+
+        {/* Skip Link para accesibilidad */}
+        <a 
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
+        >
+          Saltar al contenido principal
+        </a>
       </div>
     </div>
   )

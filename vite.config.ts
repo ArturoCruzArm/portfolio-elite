@@ -10,5 +10,17 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'three-addons': ['@react-three/fiber', '@react-three/drei'],
+          'framer': ['framer-motion'],
+          'lucide': ['lucide-react'],
+          'vendor': ['react', 'react-dom']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   },
 })

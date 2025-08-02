@@ -44,6 +44,7 @@ const Education = () => {
     { name: 'Swift 4', org: 'SoloLearn', year: '2023', image: '/portfolio-elite/certificates/swift-4.jpg' },
     { name: 'Líder', org: 'Fundación Carlos Slim', year: '2023', image: '/portfolio-elite/certificates/lider-fundacion-carlos-slim.jpg' },
     { name: 'Educación Financiera', org: 'Gobierno de México', year: '2024', grade: '9/10', image: '/portfolio-elite/certificates/educacion-finaniera.JPG' },
+    { name: 'LWG Oro', org: 'Leather Working Group', year: '2024', image: '/portfolio-elite/certificates/lwg-oro.jpg' },
     { name: 'CCNA R&S: Routing and Switching Essentials', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-routing-switching.JPG' },
     { name: 'CCNA R&S: Scaling Networks', org: 'Cisco Academy', year: '2023', image: '/portfolio-elite/certificates/ccna-scaling-networks.JPG' },
     { name: 'Técnico en Informática', org: 'Fundación Carlos Slim', year: '2023', image: '/portfolio-elite/certificates/tecnico-informatica.jpg' },

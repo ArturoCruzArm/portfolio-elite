@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Award, Clock, Star } from 'lucide-react'
+import { GraduationCap, Award, Clock, Star, X } from 'lucide-react'
+import { useState } from 'react'
 
 const Education = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const education = [
     {
       institution: 'Universidad Virtual del Estado de Guanajuato (UVEG)',
@@ -136,7 +138,7 @@ const Education = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 group max-w-4xl mx-auto w-full"
+                className="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-dark-600 hover:border-primary-500 transition-all duration-300 group max-w-2xl mx-auto w-full"
               >
                 <div className="flex items-start space-x-4">
                   {/* Contenido del texto - lado izquierdo */}
@@ -164,7 +166,7 @@ const Education = () => {
                       </div>
                       {cert.image && (
                         <div className="mt-2 text-xs text-primary-500 opacity-70">
-                          📜 Ver certificado →
+                          📜 Click para ampliar →
                         </div>
                       )}
                     </div>
@@ -172,11 +174,14 @@ const Education = () => {
                   
                   {/* Imagen del certificado - lado derecho */}
                   {cert.image && (
-                    <div className="w-16 h-12 flex-shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-dark-600 group-hover:border-primary-400 transition-colors duration-300 bg-gray-50">
+                    <div 
+                      className="w-20 h-16 flex-shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-dark-600 group-hover:border-primary-400 transition-colors duration-300 bg-gray-50 cursor-pointer hover:shadow-lg"
+                      onClick={() => setSelectedImage(cert.image!)}
+                    >
                       <img 
                         src={cert.image} 
                         alt={`Certificado ${cert.name}`}
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   )}
@@ -201,6 +206,29 @@ const Education = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Modal para mostrar imagen en grande */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full h-full">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors duration-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Certificado ampliado"
+              className="w-full h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

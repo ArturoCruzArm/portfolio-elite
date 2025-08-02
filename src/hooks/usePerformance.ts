@@ -29,7 +29,7 @@ export const usePerformance = (): PerformanceInfo => {
     }
 
     const getDeviceMemory = (): number => {
-      // @ts-ignore - Navigator.deviceMemory is experimental
+      // @ts-expect-error - Navigator.deviceMemory is experimental
       return navigator.deviceMemory || 4
     }
 

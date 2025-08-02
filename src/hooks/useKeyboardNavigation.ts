@@ -8,6 +8,20 @@ export const useKeyboardNavigation = (navigation: Array<{ name: string; href: st
     }
   }, [])
 
+  const showKeyboardShortcuts = useCallback(() => {
+    const shortcuts = `
+Atajos de teclado disponibles:
+• 1-6: Navegar a secciones
+• Alt + ↑/↓: Sección anterior/siguiente  
+• ?: Mostrar esta ayuda
+• Esc: Cerrar modales
+• Tab: Navegar por elementos interactivos
+    `.trim()
+    
+    announceToScreenReader('Mostrando atajos de teclado')
+    alert(shortcuts) // Temporal - en producción sería un modal accesible
+  }, [])
+
   const handleKeyDown = useCallback((event: KeyboardEvent) => {
     // Solo procesar si no estamos en un input o textarea
     if (event.target instanceof HTMLInputElement || 
@@ -58,7 +72,7 @@ export const useKeyboardNavigation = (navigation: Array<{ name: string; href: st
     if (event.key === 'Escape') {
       closeAllModals()
     }
-  }, [navigation, scrollToSection])
+  }, [navigation, scrollToSection, showKeyboardShortcuts])
 
   const getCurrentSection = (): string => {
     const sections = document.querySelectorAll('section[id]')
@@ -87,19 +101,6 @@ export const useKeyboardNavigation = (navigation: Array<{ name: string; href: st
     }, 1000)
   }
 
-  const showKeyboardShortcuts = () => {
-    const shortcuts = `
-Atajos de teclado disponibles:
-• 1-6: Navegar a secciones
-• Alt + ↑/↓: Sección anterior/siguiente  
-• ?: Mostrar esta ayuda
-• Esc: Cerrar modales
-• Tab: Navegar por elementos interactivos
-    `.trim()
-    
-    announceToScreenReader('Mostrando atajos de teclado')
-    alert(shortcuts) // Temporal - en producción sería un modal accesible
-  }
 
   const closeAllModals = () => {
     // Cerrar cualquier modal abierto

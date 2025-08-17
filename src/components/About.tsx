@@ -43,7 +43,7 @@ const About = () => {
               
               <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                 Desde <span className="text-primary-500 font-semibold">2019</span> dirijo 
-                <span className="gradient-text font-semibold"> Producciones Foro 7</span> (fines de semana), 
+                <span className="gradient-text font-semibold"> Producciones Multimedia</span> (fines de semana), 
                 combinando lo técnico con lo artístico. Busco oportunidades de desarrollo de software entre semana 
                 para crear soluciones integrales y experiencias digitales memorables.
               </p>
@@ -105,7 +105,7 @@ const About = () => {
               <Rocket className="w-12 h-12 text-green-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Emprendedor</h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Fundador de Producciones Foro 7 desde 2012, gestión integral de proyectos
+                Fundador de Producciones Multimedia desde 2012, gestión integral de proyectos
               </p>
             </motion.div>
           </motion.div>

@@ -46,7 +46,7 @@ const Experience = () => {
       color: 'from-orange-500 to-red-500'
     },
     {
-      company: 'Producciones Foro 7',
+      company: 'Producciones Multimedia',
       position: 'Fundador & Productor Multimedia (Fines de Semana)',
       period: 'Desde 2019 – Actualidad',
       location: 'León, Guanajuato',

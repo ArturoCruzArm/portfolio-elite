@@ -146,7 +146,7 @@ Este portafolio fue diseñado para:
 **Juan Arturo Cruz Armenta**
 - 🎯 Desarrollador Backend & Full Stack
 - 🎬 Productor Multimedia (150+ eventos)
-- 🚀 Emprendedor (Producciones Foro 7 desde 2012)
+- 🚀 Emprendedor (Producciones Multimedia desde 2012)
 - 📍 León, Guanajuato, México
 
 ### Tecnologías de Expertise
@@ -159,8 +159,7 @@ Este portafolio fue diseñado para:
 
 ## 📞 Contacto
 
-- 📧 **Email Principal**: foro7.producciones@hotmail.com
-- 📧 **Email Alternativo**: foro7.arturocruz@gmail.com
+
 - 🔗 **LinkedIn**: [juanarturocruzarmenta](https://linkedin.com/in/juanarturocruzarmenta)
 - 💻 **GitHub**: [ArturoCruzArm](https://github.com/ArturoCruzArm)
 - 🌐 **Portfolio**: [Ver en vivo](https://arturocruzarm.github.io/portfolio-elite/)

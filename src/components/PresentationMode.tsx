@@ -142,7 +142,7 @@ const slides: Slide[] = [
           </ul>
         </div>
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6">
-          <h3 className="text-2xl font-bold mb-2">Producciones Foro 7</h3>
+          <h3 className="text-2xl font-bold mb-2">Producciones Multimedia</h3>
           <p className="text-lg opacity-90 mb-4">Fundador & Productor Multimedia • 2012 - Actualidad</p>
           <ul className="space-y-2 text-left">
             <li className="flex items-start space-x-2">
@@ -172,7 +172,7 @@ const slides: Slide[] = [
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6">
             <div className="text-4xl mb-3">📧</div>
             <h4 className="font-bold text-lg mb-2">Email</h4>
-            <p className="text-sm opacity-80">foro7.producciones@hotmail.com</p>
+            <p className="text-sm opacity-80">juanarturoruzarmenta@outlook.com</p>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6">
             <div className="text-4xl mb-3">💼</div>
